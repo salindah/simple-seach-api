@@ -1,1 +1,8 @@
+com/adnilas/simplesearchapi/service/impl/ProductSearchServiceImpl.class
+com/adnilas/simplesearchapi/dto/ProductResultDto.class
+com/adnilas/simplesearchapi/model/Product.class
+com/adnilas/simplesearchapi/dto/ProductDto.class
+com/adnilas/simplesearchapi/connector/ProductSearchConnector.class
+com/adnilas/simplesearchapi/service/ProductSearchService.class
+com/adnilas/simplesearchapi/dto/ProductSearchDto.class
 com/adnilas/simplesearchapi/SimpleSearchApiApplication.class
