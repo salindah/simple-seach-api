@@ -22,16 +22,28 @@ public class ProductSearchServiceImpl implements ProductSearchService {
   public ProductResultDto getProducts(ProductSearchDto filter) {
 
     ProductResultDto resultDto = null;
-    String sql = "SELECT * FROM PRODUCTS";
+    String sql = generateQuery(filter);
 
     List<Product> products = template.query(sql, new BeanPropertyRowMapper<>(Product.class));
     System.out.println(products.size());
-    if(!products.isEmpty()) {
+    if (!products.isEmpty()) {
       resultDto = new ProductResultDto();
-      List<ProductDto> dtoList = products.stream().map( product -> product.toDto())
+      List<ProductDto> dtoList = products.stream()
+          .map(product -> product.toDto())
           .collect(Collectors.toList());
       resultDto.setData(dtoList);
     }
     return resultDto;
+  }
+
+  private String generateQuery(ProductSearchDto filter) {
+    StringBuilder query = new StringBuilder("SELECT * FROM PRODUCTS WHERE ID > 0 ");
+    if (filter.getType() != null) {
+      query.append("AND PRODUCT_TYPE = '" + filter.getType() + "'");
+    }
+    if( filter.getMinPrice() != null){
+      query.append("AND PRICE >= " + filter.getMinPrice() );
+    }
+    return query.toString();
   }
 }

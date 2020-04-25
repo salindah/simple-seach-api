@@ -1,5 +1,7 @@
 package com.adnilas.simplesearchapi.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ProductDto {
 
   private String type;
@@ -8,6 +10,7 @@ public class ProductDto {
 
   private double price;
 
+  @JsonProperty("store_address")
   private String storeAddress;
 
   public String getType() {

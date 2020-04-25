@@ -5,5 +5,5 @@ import com.adnilas.simplesearchapi.dto.ProductSearchDto;
 
 public interface ProductSearchService {
 
-  public ProductResultDto getProducts( ProductSearchDto filter);
+  ProductResultDto getProducts(ProductSearchDto filter);
 }
