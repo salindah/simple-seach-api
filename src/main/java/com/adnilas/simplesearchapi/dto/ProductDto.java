@@ -1,6 +1,7 @@
 package com.adnilas.simplesearchapi.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.math.BigDecimal;
 
 public class ProductDto {
 
@@ -8,7 +9,7 @@ public class ProductDto {
 
   private String properties;
 
-  private double price;
+  private BigDecimal price;
 
   @JsonProperty("store_address")
   private String storeAddress;
@@ -29,11 +30,11 @@ public class ProductDto {
     this.properties = properties;
   }
 
-  public double getPrice() {
+  public BigDecimal getPrice() {
     return price;
   }
 
-  public void setPrice(double price) {
+  public void setPrice(BigDecimal price) {
     this.price = price;
   }
 

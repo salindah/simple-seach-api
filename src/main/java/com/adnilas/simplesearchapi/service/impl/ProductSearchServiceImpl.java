@@ -25,7 +25,6 @@ public class ProductSearchServiceImpl implements ProductSearchService {
     String sql = generateQuery(filter);
 
     List<Product> products = template.query(sql, new BeanPropertyRowMapper<>(Product.class));
-    System.out.println(products.size());
     if (!products.isEmpty()) {
       resultDto = new ProductResultDto();
       List<ProductDto> dtoList = products.stream()
@@ -39,11 +38,37 @@ public class ProductSearchServiceImpl implements ProductSearchService {
   private String generateQuery(ProductSearchDto filter) {
     StringBuilder query = new StringBuilder("SELECT * FROM PRODUCTS WHERE ID > 0 ");
     if (filter.getType() != null) {
-      query.append("AND PRODUCT_TYPE = '" + filter.getType() + "'");
+      query.append("\nAND PRODUCT_TYPE = '" + filter.getType() + "'");
     }
     if( filter.getMinPrice() != null){
-      query.append("AND PRICE >= " + filter.getMinPrice() );
+      query.append("\nAND PRICE >= " + filter.getMinPrice() );
+    }
+    if( filter.getMaxPrice() != null){
+      query.append("\nAND PRICE <= " + filter.getMaxPrice() );
+    }
+    if(filter.getCity() != null ){
+      query.append("\nAND CITY = '" + filter.getCity() + "'");
+    }
+    if(filter.getProperty() != null){
+      query.append("\nAND PROPERTY = '" + filter.getProperty() + "'");
+    }
+    if(filter.getColor() != null ){
+      query.append("\nAND COLOR = '" + filter.getColor() + "'");
+    }
+    if(filter.getMinimumLimit() != null ){
+      query.append("\nAND GB_LIMIT >= " + filter.getMinimumLimit() );
+    }
+    if(filter.getMaximumLimit() != null ){
+      query.append("\nAND GB_LIMIT <= " + filter.getMaximumLimit());
     }
     return query.toString();
+  }
+
+  public JdbcTemplate getTemplate() {
+    return template;
+  }
+
+  public void setTemplate(JdbcTemplate template) {
+    this.template = template;
   }
 }

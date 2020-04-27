@@ -1,1 +1,6 @@
+com/adnilas/simplesearchapi/service/ProductSearchServiceImplTest.class
+com/adnilas/simplesearchapi/dto/ProductDtoTest.class
+com/adnilas/simplesearchapi/dto/ProductResultDtoTest.class
+com/adnilas/simplesearchapi/connector/ProductSearchConnectorTest.class
 com/adnilas/simplesearchapi/SimpleSearchApiApplicationTests.class
+com/adnilas/simplesearchapi/service/ProductSearchServiceImplIntegrationTest.class
