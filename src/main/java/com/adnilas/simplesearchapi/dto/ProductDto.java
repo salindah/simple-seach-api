@@ -3,6 +3,11 @@ package com.adnilas.simplesearchapi.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 
+/**
+ * This class is used to transfer product data from search service to connector end point.
+ *
+ * @author  Salinda Hettiarachchi
+ */
 public class ProductDto {
 
   private String type;

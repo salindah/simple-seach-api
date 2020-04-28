@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+/**
+ * This class act as an endpoint that models product search.
+ *
+ * @author  Salinda Hettiarachchi
+ */
 @RestController
 @RequestMapping("/product")
 public class ProductSearchConnector {
@@ -29,6 +34,20 @@ public class ProductSearchConnector {
     return "Product search service is running!";
   }
 
+  /**
+   * Act as the endpoint which accept query parameters and, execute product search method
+   * and, return the results.
+   *
+   * @param type  Product type to search by
+   * @param minPrice Minimum price of the product to search by
+   * @param maxPrice  Maximum price of the product to search by
+   * @param city City to search by
+   * @param property Property of the product to search by. 'phone' or 'subscription'
+   * @param color Color of the product to search by, if it is a phone.
+   * @param minimumLimit Minimum GB limit of the product to search by, if it is a subscription
+   * @param maximumLimit Maximum GB limit of the product to search by, if it is a subscription
+   * @return ProductResultDto object which wraps a List of products as resulted.
+   */
   @GetMapping
   @ResponseBody
   public ProductResultDto getProducts(

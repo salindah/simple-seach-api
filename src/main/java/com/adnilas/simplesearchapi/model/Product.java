@@ -3,6 +3,11 @@ package com.adnilas.simplesearchapi.model;
 import com.adnilas.simplesearchapi.dto.ProductDto;
 import java.math.BigDecimal;
 
+/**
+ * This class act as the Models class of the product data.
+ *
+ * @author  Salinda Hettiarachchi
+ */
 public class Product {
 
   private static String COLOR = "color";
@@ -81,6 +86,12 @@ public class Product {
     this.city = city;
   }
 
+  /**
+   * This converts model object of product to dto object.
+   *
+   * @author  Salinda Hettiarachchi
+   * @return Product DTO
+   */
   public ProductDto toDto() {
     ProductDto dto = new ProductDto();
     dto.setType(this.productType);

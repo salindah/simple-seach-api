@@ -2,6 +2,11 @@ package com.adnilas.simplesearchapi.dto;
 
 import java.math.BigDecimal;
 
+/**
+ * This class hold set of query parameters, and transfer them from connector to service.
+ *
+ * @author  Salinda Hettiarachchi
+ */
 public class ProductSearchDto {
 
   private String type;

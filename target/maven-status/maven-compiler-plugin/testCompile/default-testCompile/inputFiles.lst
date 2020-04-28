@@ -1,4 +1,6 @@
+/Users/shettiarachchi/workspace/simple-seach-api/src/test/java/com/adnilas/simplesearchapi/model/ProductTest.java
 /Users/shettiarachchi/workspace/simple-seach-api/src/test/java/com/adnilas/simplesearchapi/SimpleSearchApiApplicationTests.java
+/Users/shettiarachchi/workspace/simple-seach-api/src/test/java/com/adnilas/simplesearchapi/dto/ProductSearchDtoTest.java
 /Users/shettiarachchi/workspace/simple-seach-api/src/test/java/com/adnilas/simplesearchapi/dto/ProductDtoTest.java
 /Users/shettiarachchi/workspace/simple-seach-api/src/test/java/com/adnilas/simplesearchapi/connector/ProductSearchConnectorTest.java
 /Users/shettiarachchi/workspace/simple-seach-api/src/test/java/com/adnilas/simplesearchapi/service/ProductSearchServiceImplTest.java

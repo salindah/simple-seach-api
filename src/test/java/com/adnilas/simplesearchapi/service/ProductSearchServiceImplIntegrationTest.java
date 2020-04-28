@@ -198,6 +198,7 @@ public class ProductSearchServiceImplIntegrationTest extends Mockito {
     List<Product> products = Arrays.asList(product);
 
     when( template.query(eq("SELECT * FROM PRODUCTS WHERE ID > 0 \n"
+        + "AND PROPERTY = 'gb_limit'\n"
         + "AND GB_LIMIT >= 20"), any(BeanPropertyRowMapper.class)))
         .thenReturn(products);
 
@@ -224,6 +225,7 @@ public class ProductSearchServiceImplIntegrationTest extends Mockito {
     List<Product> products = Arrays.asList(product);
 
     when( template.query(eq("SELECT * FROM PRODUCTS WHERE ID > 0 \n"
+        + "AND PROPERTY = 'gb_limit'\n"
         + "AND GB_LIMIT <= 50"), any(BeanPropertyRowMapper.class)))
         .thenReturn(products);
 
